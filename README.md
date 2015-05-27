@@ -1,7 +1,7 @@
 # Daemon.php
 An abstract class that provides methods to daemonise a Linux/Unix PHP command-line script
 
-# Usage
+## Usage
 Below is the minimum code you need to use the functionality of Daemon.php. The steps you need to take are:
 1. Import the code using require().
 2. Create a global to store the name of the lock file (if you wish to use a lock file).
@@ -10,13 +10,13 @@ Below is the minimum code you need to use the functionality of Daemon.php. The s
 5. Create a public static class method called signalHandler(), that will gracefully exit you program, when a signal is received.
 6. Create a public class method called start(), that contains your application code.
 7. Then external to your class, do this:
-        * Instantiate an instance of your class.
-        * Call the static method setLock(), to create a lock file (if you wish to use a lock file).
-        * Call daemonise().
-        * Call installSignalHandlers("DT_Loggingd"), passing the name of your derived class.
-        * Call start().
+..1. Instantiate an instance of your class.
+..2. Call the static method setLock(), to create a lock file (if you wish to use a lock file).
+..3. Call daemonise().
+..4. Call installSignalHandlers("DT_Loggingd"), passing the name of your derived class.
+..5. Call start().
 
-# An example is shown below:
+An example is shown below:
 ```php
 <?php
 require("Daemon.php");
